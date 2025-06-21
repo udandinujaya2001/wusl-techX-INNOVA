@@ -56,7 +56,8 @@
     }
     /* Hero Section */
     .hero-section {
-      background: linear-gradient(90deg, #000000 0%, #390132 100%);
+      
+      background: linear-gradient(360deg, #080404 0%, #390132 100%);
       color: #fff;
       height: 65vh;
       padding: 100px 0 100px 0;
@@ -231,8 +232,11 @@
       flex-direction: column;
       justify-content: center;
     }
-
     /*program section*/
+    .program-section {
+      position: relative;
+      z-index: 2;
+    }
     .workshop-card-vertical {
      background: linear-gradient(120deg, #181818 80%, #39013233 100%);
      border: 2px solid #ff00ccaa;
@@ -244,8 +248,8 @@
       transition: box-shadow 0.25s, transform 0.18s;
       position: relative;
       overflow: hidden;
-      width: 270px;    
-      min-height: 250px; 
+      width: 270px;      /* Decreased width */
+      min-height: 250px; /* Increased height */
       display: flex;
      flex-direction: column;
      align-items: center;
@@ -255,12 +259,6 @@
       box-shadow: 0 0 32px 8px #ff77e9cc, 0 0 48px 12px #390132cc;
      border-color: #ff77e9;
      transform: translateY(-8px) scale(1.03);
-    }
-    .workshop-card-vertical h4{
-      font-size: x-large;
-    }
-    .workshop-card-vertical p{
-      font-size: medium;
     }
     .workshop-icon {
       font-size: 2.2rem;
@@ -286,7 +284,9 @@
        padding: 18px 8px 14px 8px;
       }
     }
-    
+
+
+
     /* Timeline */
     .timeline-section {
       padding: 40px 0 80px 0;
@@ -400,7 +400,7 @@
     }
     .timeline-card .timeline-date {
       color: 
-      #ff00cce1;
+      #ff00ccaa;
       font-size: 1em;
       font-style: italic;
       margin-bottom: 0.6em;
@@ -802,20 +802,9 @@
 </section>
 
 <!-- 3. Program Section (HTML) -->
-<section id="program" class="py-5 grid-bg">
+<section class="program-section grid-bg py-5">
   <div class="container">
-    <h2 class="section-title">Program</h2>
-    <div class="about-box mb-4">
-      <h4>Team Requirements</h4>
-      <ul>
-        <li>Each team must consist of 3 to 5 members from the same university</li>
-        <li>Teams must include at least one female member to promote gender diversity</li>
-        <li>One team member must be assigned as the Team Leader, who will be responsible for all official communications and updates</li>
-        <li>Participants are allowed to be part of only one team</li>
-        <li>Team changes are allowed only before the registration deadline</li>
-      </ul>
-    </div>
-    <div class="row justify-content-center g-4 mt-4">
+    <div class="row justify-content-center g-4">
       <div class="col-md-4 d-flex justify-content-center">
         <div class="workshop-card-vertical">
           <div class="workshop-icon"><i class="bi bi-search"></i></div>
@@ -826,8 +815,8 @@
       <div class="col-md-4 d-flex justify-content-center">
         <div class="workshop-card-vertical">
           <div class="workshop-icon"><i class="bi bi-globe2"></i></div>
-            <h4 class="workshop-title">Workshop 2</h4>
-            <p class="workshop-desc">Driving Sustainability Through Tech</p>
+            <h4 class="workshop-title">Driving Sustainability Through Tech</h4>
+            <p class="workshop-desc">Explore how technology can drive sustainable solutions for a better future.</p>
           </div>
       </div>
       <div class="col-md-4 d-flex justify-content-center">
@@ -838,10 +827,9 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </section>
+
 
 <!-- Timeline -->
 <section id="timeline" class="timeline-section">
