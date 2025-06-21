@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,6 +17,35 @@
       margin: 0;
       padding: 0;
     }
+
+    .logo-wrapper {
+    width: 120px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .logo-wrapper-1{
+      width: 215px;
+      height: 40px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .logo-img-1{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     /* Grid background for sections */
     .grid-bg {
       background-color: #111;
@@ -27,10 +56,10 @@
     }
     /* Hero Section */
     .hero-section {
-      background: linear-gradient(90deg, #1e2a3a 0%, #ff9800 100%);
+      background: linear-gradient(90deg, #1e2a3a 0%, #390132 100%);
       color: #fff;
-      height: 70vh;
-      padding: 100px 0 80px 0;
+      height: 65vh;
+      padding: 100px 0 100px 0;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -52,92 +81,182 @@
       z-index: 1;
     }
     .glow-btn {
-      box-shadow: 0 0 18px 4px #ff9800b0, 0 0 2px #fff;
+      box-shadow: 0 0 18px 4px 
+      #390132, 0 0 2px #fff;
       transition: box-shadow 0.3s, transform 0.2s;
       font-weight: 600;
       letter-spacing: 1px;
     }
     .glow-btn:hover {
-      box-shadow: 0 0 32px 8px #ff9800, 0 0 4px #fff;
+      box-shadow: 0 0 32px 8px 
+      #390132, 0 0 4px #fff;
       transform: scale(1.05);
     }
     .section-title {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: bold;
       letter-spacing: 1px;
       color: #fff;
       margin-bottom: 2rem;
       text-align: center;
     }
-    /* What is SLIITXtreme */
+
+    .hero-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ff00ccaa;
+    }
+
+    .hero-tagline {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: white;
+      margin-top: -12px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-logo {
+        font-size: 4rem;
+        letter-spacing: 2px;
+      }
+      .hero-tagline {
+        font-family: 'Exo 2', sans-serif;
+        font-size: clamp(3rem, 6vw, 9rem); /* Responsive scaling */
+        font-weight: 300;
+        color: white;
+        margin-top: -20px;
+        letter-spacing: 1px;
+      }
+
+    } 
+
+    .hero-logo-img-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 9rem; 
+      margin-bottom: 25px;
+    }
+    .hero-logo-img {
+      max-height: 53.5rem; 
+      max-width: 95vw;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px #ff00ccaa);
+    }
+    @media (max-width: 768px) {
+      .hero-logo-img-wrapper {
+        height: 4rem;
+      }
+      .hero-logo-img {
+        max-height: 3.8rem;
+      }
+    }
+
+
+    /* Navigation bar*/
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      padding: 14px 0;
+      background: rgba(24, 24, 24, 0.95);
+      border-top: 1px solid #390132;
+      border-bottom: 1px solid #390132;
+    }
+    .nav-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.3s, border-bottom 0.3s;
+      position: relative;
+      font-size: 1.05rem;
+    }
+    .nav-bar a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #390132;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+    .nav-bar a:hover::after {
+      width: 100%;
+    }
+    .nav-bar a:hover {
+      color: #ff77e9;
+    }
+
+    /* Awards */
+    .awards-row {
+      justify-content: center;
+      align-items: stretch;
+      gap: 24px 0;
+      margin-top: 58px;
+    }
+    .award-card {
+      background: rgba(24,24,24,0.95);
+      border: 2px solid #390132;
+      border-radius: 12px;
+      padding: 32px 16px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 0 18px 1px #390132;
+      transition: box-shadow 0.2s, transform 0.2s;
+      min-width: 360px;   /* doubled width */
+      min-height: 320px;  /* doubled height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .award-card.active {
+      box-shadow: 0 0 32px 8px 
+      #390132cc;
+      border-width: 3px;
+    }
+    .award-card .award-icon {
+      font-size: 2.5rem;
+      color: 
+      #390132;
+      margin-bottom: 0.5rem;
+    }
+    .award-card h4 {
+      color: 
+      #fff;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .champion-card {
+      transform: scale(1.2);
+      z-index: 2;
+    }
+
+    /* What is Innova */
     .about-box {
       background: rgba(24,24,24,0.95);
       border-radius: 14px;
-      box-shadow: 0 0 16px 2px #ff980033;
+      box-shadow: 0 0 16px 2px 
+      #39013233;
       padding: 32px 28px;
       min-height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    /* Statistics */
-    .stats-card {
-      background: rgba(24,24,24,0.92);
-      border-radius: 12px;
-      padding: 32px 0;
-      margin: 16px 0;
-      box-shadow: 0 2px 18px 0 #ff980033;
-      transition: transform 0.2s;
-      border: 1.5px solid #ff9800;
-    }
-    .stats-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 4px 32px 0 #ff980055;
-    }
-    .stats-number {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #ff9800;
-      text-shadow: 0 0 8px #ff9800aa;
-      margin-bottom: 0.5rem;
-    }
-    /* Awards */
-    .awards-row {
-      justify-content: center;
-      align-items: stretch;
-      gap: 24px 0;
-    }
-    .award-card {
-      background: rgba(24,24,24,0.95);
-      border: 2px solid #ff9800;
-      border-radius: 12px;
-      padding: 24px 10px;
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 0 18px 1px #ff980055;
-      transition: box-shadow 0.2s, transform 0.2s;
-      min-width: 200px;
-      min-height: 180px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-    }
-    .award-card.active {
-      box-shadow: 0 0 32px 8px #ff9800cc;
-      border-width: 3px;
-    }
-    .award-card .award-icon {
-      font-size: 2.5rem;
-      color: #ff9800;
-      margin-bottom: 0.5rem;
-    }
-    .award-card h4 {
-      color: #ff9800;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
+    
     /* Timeline */
     .timeline-section {
       padding: 40px 0 80px 0;
@@ -176,7 +295,8 @@
       top: 0;
       width: 3px;
       height: 100%;
-      background: #ff9800;
+      background: 
+      #ff00ccaa;
       border-radius: 2px;
       transform: translateX(-50%);
       z-index: 1;
@@ -207,8 +327,11 @@
 
     .timeline-card {
       background: #111;
-      border: 2px solid #ff9800;
-      box-shadow: 0 0 0 0 #ff9800, 0 0 0 0 #ff9800;
+      border: 2px solid 
+      #ff00ccaa;
+      box-shadow: 0 0 0 0 
+      #ff00ccaa, 0 0 0 0 
+      #ff00ccaa;
       color: #fff;
       min-width: 340px;
       max-width: 440px;
@@ -224,13 +347,20 @@
       border-radius: 12px;
     }
     .timeline-card.highlight {
-      box-shadow: 0 0 32px 8px #ff9800cc, 0 0 48px 12px #ff9800cc;
-      border: 2.5px solid #ff9800;
+      box-shadow: 0 0 32px 8px 
+      #ff00ccaa, 0 0 48px 12px 
+      #ff00ccaa;
+      border: 2.5px solid 
+      #ff00ccaa;
       animation: glow 1.5s infinite alternate;
     }
     @keyframes glow {
-      from { box-shadow: 0 0 32px 8px #ff9800cc, 0 0 48px 12px #ff9800cc; }
-      to   { box-shadow: 0 0 56px 16px #ff9800cc, 0 0 64px 24px #ff9800cc; }
+      from { box-shadow: 0 0 32px 8px 
+        #ff00ccaa, 0 0 48px 12px 
+        #ff00ccaa; }
+      to   { box-shadow: 0 0 56px 16px 
+        #ff00ccaa, 0 0 64px 24px 
+        #ff00ccaa; }
     }
     .timeline-card .timeline-title {
       font-size: 1.21rem;
@@ -239,7 +369,8 @@
       color: #fff;
     }
     .timeline-card .timeline-date {
-      color: #ff9800;
+      color: 
+      #ff00ccaa;
       font-size: 1em;
       font-style: italic;
       margin-bottom: 0.6em;
@@ -263,7 +394,8 @@
     .timeline-connector {
       width: 34px;
       height: 2.5px;
-      background: #ff9800;
+      background: 
+      #ff00ccaa;
       border-radius: 2px;
       position: absolute;
       top: 50%;
@@ -274,10 +406,12 @@
     .timeline-dot {
       width: 22px;
       height: 22px;
-      background: #ff9800;
+      background: 
+      #ff00ccaa;
       border: 4px solid #111;
       border-radius: 50%;
-      box-shadow: 0 0 12px #ff9800aa;
+      box-shadow: 0 0 12px 
+      #ff00ccaa;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -347,74 +481,10 @@
       z-index: 0;
     }
 
-    /* Endorsements */
-    .endorsement-box {
-      background: rgba(24,24,24,0.95);
-      border: 2px solid #ff9800;
-      border-radius: 12px;
-      padding: 24px 32px;
-      box-shadow: 0 0 18px 1px #ff980055;
-      color: #fff;
-      min-height: 160px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: relative;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .endorsement-box:hover {
-      box-shadow: 0 0 32px 8px #ff9800cc;
-      transform: scale(1.03);
-    }
-    .endorsement-title {
-      color: #ff9800;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    .endorsement-divider {
-      width: 40px;
-      height: 3px;
-      background: #ff9800;
-      border-radius: 2px;
-      margin-bottom: 1rem;
-    }
-    /* Sponsors */
-    .sponsor-card {
-      background: rgba(24,24,24,0.95);
-      border: 2px solid #ff9800;
-      height: 10rem;
-      border-radius: 12px;
-      padding: 24px 10px;
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 0 18px 1px #ff980055;
-      margin: 0 12px;
-      min-width: 180px;
-      min-height: 120px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .sponsor-icon {
-      font-size: 2.2rem;
-      color: #ff9800;
-      margin-bottom: 0.5rem;
-    }
-    .sponsor-badge {
-      background: #222;
-      color: #ff9800;
-      border-radius: 10px;
-      padding: 2px 10px;
-      font-size: 0.95rem;
-      margin-top: 8px;
-      border: 1px solid #ff9800;
-      display: inline-block;
-    }
     /* Registration */
     .registration-section {
-      background: linear-gradient(90deg, #1e2a3a 0%, #ff9800 100%);
+      background: linear-gradient(90deg, #1e2a3a 0%, 
+      #390132 100%);
       color: #fff;
       text-align: center;
       padding: 60px 0 40px 0;
@@ -443,9 +513,11 @@
       letter-spacing: 2px;
       font-weight: bold;
       color: #fff;
-      text-shadow: 0 0 10px #ff9800, 0 0 4px #fff;
+      text-shadow: 0 0 10px 
+      #390132, 0 0 4px #fff;
       margin-bottom: 18px;
     }
+
     /* FAQ */
     .faq-section.grid-bg {
       background-color: #111;
@@ -460,16 +532,20 @@
     }
     .faq-item {
       background: #181818;
-      border: 2px solid #ff9800;
+      border: 2px solid 
+      #390132;
       border-radius: 12px;
       margin-bottom: 18px;
-      box-shadow: 0 0 0 0 #ff9800;
+      box-shadow: 0 0 0 0 
+      #390132;
       transition: box-shadow 0.25s, border-color 0.25s;
       overflow: hidden;
     }
     .faq-item.open {
-      border-color: #ff9800;
-      box-shadow: 0 0 24px 4px #ff9800cc;
+      border-color: 
+      #390132;
+      box-shadow: 0 0 24px 4px 
+      #390132cc;
     }
     .faq-question {
       width: 100%;
@@ -489,7 +565,7 @@
       letter-spacing: 0.5px;
     }
     .faq-item.open .faq-question {
-      color: #ff9800;
+      color:#c43cb1;
     }
     .faq-answer {
       padding: 0 24px 18px 24px;
@@ -510,7 +586,8 @@
     }
     .faq-chevron {
       font-size: 1.5rem;
-      color: #ff9800;
+      color: 
+      #390132;
       transition: transform 0.3s cubic-bezier(.4,0,.2,1);
     }
     .faq-item.open .faq-chevron {
@@ -528,7 +605,8 @@
       font-size: 1rem;
       padding: 24px 0 12px 0;
       text-align: center;
-      border-top: 1.5px solid #ff9800;
+      border-top: 1.5px solid 
+      #390132;
     }
     /* Responsive tweaks */
     @media (max-width: 991px) {
@@ -564,8 +642,9 @@
     }
     /* Animate numbers */
     @keyframes neonGlow {
-      0%, 100% { text-shadow: 0 0 8px #ff9800, 0 0 24px #fff;}
-      50% { text-shadow: 0 0 32px #ff9800, 0 0 8px #fff;}
+      0%, 100% { text-shadow: 0 0 8px #390132, 0 0 24px #fff;}
+      50% { text-shadow: 0 0 32px 
+        #390132, 0 0 8px #fff;}
     }
     .neon-text {
       animation: neonGlow 2s infinite;
@@ -573,108 +652,159 @@
   </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <div class="row align-items-center w-100">
+  
+        <!-- Left logo with link -->
+        <div class="col-4 text-start d-flex justify-content-start">
+          <a href="https://ieeecs.wyb.ac.lk/" class="logo-wrapper">
+            <img src="assets/techX/wusl_logo.png" alt="WUSL Logo" class="logo-img">
+          </a>
+        </div>
+  
+        <!-- Center logo with link -->
+        <div class="col-4 text-center d-flex justify-content-center">
+          <a href="#" class="logo-wrapper-1">
+            <img src="assets/techX/ieee%20syp.png" alt="IEEE SYP Logo" class="logo-img-1">
+          </a>
+        </div>
+  
+        <!-- Right logo with link -->
+        <div class="col-4 text-end d-flex justify-content-end">
+          <a href="#" class="logo-wrapper">
+            <img src="assets/techX/ieee.png" alt="IEEE Logo" class="logo-img">
+          </a>
+        </div>
+  
+      </div>
+    </div>
+</nav>
 
 <!-- Hero Section -->
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Exo+2:wght@300&display=swap" rel="stylesheet">
+
 <section class="hero-section">
-  <div class="hero-content animate__animated animate__fadeInDown">
-    <h1 class="display-4 fw-bold neon-text">Lorem ipsum dolor </h1>
-    <p class="lead mb-4">Lorem ipsum dolor</p>
-    <p>sit amet, consectetur adipisicing elit. Ab alias aliquam asperiores at dicta doloremque doloribus exercitationem, illo impedit, laudantium libero neque numquam odit quia quidem rem repudiandae suscipit temporibus.</p>
-    <div class="d-flex justify-content-center gap-3 mt-4">
-      <a href="#register" class="btn btn-warning btn-lg glow-btn animate__animated animate__pulse animate__infinite">Register</a>
-      <a href="#timeline" class="btn btn-outline-light btn-lg animate__animated animate__fadeInRight">Learn More</a>
+  <div class="hero-content">
+    <div class="hero-logo-img-wrapper">
+      <img src="assets/techX/INNOVA Logo.png" alt="INNOVA Logo" class="hero-logo-img animate__animated animate__fadeInDown">
+    </div>
+     <div class="d-flex justify-content-center gap-3 mt-4">
+      <a href="https://forms.gle/boSbuA9tjYyphPxh6" class="btn btn-warning btn-lg glow-btn animate__animated animate__pulse animate__infinite mt-4">Register</a>
     </div>
   </div>
 </section>
 
-<!-- What is SLIITXtreme -->
+<!--Navigation bar-->
+
+<div class="nav-bar">
+    <a href="#about">About</a>
+    <a href="#program">Program</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#contact">Contact</a>
+</div>
+
+
+<!-- Awards -->
 <section class="py-5 grid-bg">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-5 mb-3 mb-md-0">
-        <img src="https://placehold.co/400x220/222/fff?text=Team+Photo" class="img-fluid rounded shadow-lg" alt="Team">
+    <h2 class="section-title">Awards</h2>
+    <div class="row awards-row">
+      <!-- 2nd Place -->
+      <div class="col-12 col-md-4 d-flex justify-content-center">
+        <div class="award-card">
+          <div class="award-icon">🥈</div>
+          <h4>1<sup>st</sup> Runner Up</h4>
+          <p style="color:silver;font-size:large">LKR 20,000</p>
+        </div>
       </div>
-      <div class="col-md-7">
-        <div class="about-box">
+
+      <!-- 1st Place (Champion - Larger) -->
+      <div class="col-12 col-md-4 d-flex justify-content-center">
+        <div class="award-card active champion-card">
+          <div class="award-icon">🥇</div>
+          <h4>Champion</h4>
+          <p style="color:gold; font-size: xx-large;">LKR 30,000</p>
+        </div>
+      </div>
+
+      <!-- 3rd Place -->
+      <div class="col-12 col-md-4 d-flex justify-content-center">
+        <div class="award-card">
+          <div class="award-icon">🥉</div>
+          <h4>2<sup>nd</sup> Runner Up</h4>
+          <p style="color:peru; font-size:large">LKR 10,000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- What is Innova -->
+<section id="about" class="py-5 grid-bg">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 col-lg-6">
+        <div class="about-box text-center">
           <h2 class="section-title">What is INNOVA?</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam, amet beatae deleniti dolore dolores excepturi exercitationem facilis ipsam maxime minima minus numquam pariatur perspiciatis quidem reiciendis tempora unde?
+            INNOVA is a national-level innovation competition that brings together the brightest young minds to solve real-world problems with technology. It encourages creativity, teamwork, and hands-on skills.
           </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Statistics -->
-<section class="py-5 grid-bg">
-  <div class="container">
-    <h2 class="section-title">INNOVA Statistics</h2>
-    <div class="row text-center">
-      <div class="col-12 col-md-4">
-        <div class="stats-card">
-          <div class="stats-number" id="teams-count">0</div>
-          <p>Teams</p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="about-box mb-4">
+          <h3 class="section-title">Who Organizes It?</h3>
+          <p>The event is proudly organized by the IEEE Computer Society Student Branch of Wayamba University of Sri Lanka in collaboration with IEEE SYP.</p>
         </div>
       </div>
-      <div class="col-12 col-md-4">
-        <div class="stats-card">
-          <div class="stats-number" id="participants-count">0</div>
-          <p>Participants</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="stats-card">
-          <div class="stats-number" id="prizes-count">0</div>
-          <p>In Prizes (LKR)</p>
+      <div class="col-md-6">
+        <div class="about-box mb-4">
+          <h3 class="section-title">Why Participate?</h3>
+          <p>By participating, you gain practical experience, enhance your innovation skills, meet industry experts, and compete for amazing prizes and recognition.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Awards -->
-<!--<section class="py-5 grid-bg">-->
-<!--  <div class="container">-->
-<!--    <h2 class="section-title">Awards</h2>-->
-<!--    <div class="row awards-row">-->
-<!--      <div class="col-12 col-md-4 d-flex justify-content-center">-->
-<!--        <div class="award-card">-->
-<!--          <div class="award-icon">🥈</div>-->
-<!--          <h4>1<sup>st</sup> Runner Up</h4>-->
-<!--          <p>Exciting Prizes</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-12 col-md-4 d-flex justify-content-center">-->
-<!--        <div class="award-card active">-->
-<!--          <div class="award-icon">🥇</div>-->
-<!--          <h4>Champion</h4>-->
-<!--          <p>Grand Prize</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-12 col-md-4 d-flex justify-content-center">-->
-<!--        <div class="award-card">-->
-<!--          <div class="award-icon">🥉</div>-->
-<!--          <h4>2<sup>nd</sup> Runner Up</h4>-->
-<!--          <p>Special Prizes</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
+<!-- 3. Program Section (HTML) -->
+<section id="program" class="py-5 grid-bg">
+  <div class="container">
+    <h2 class="section-title">Program</h2>
+    <div class="about-box mb-4">
+      <h4>Team Requirements</h4>
+      <p>Each team must consist of 3 to 5 members from the same university</p>
+      <p>Teams must include at least one female member to promote gender diversity</p>
+      <p>One team member must be assigned as the Team Leader, who will be responsible for all official communications and updates</p>
+      <p>Participants are allowed to be part of only one team</p>
+      <p>Team changes are allowed only before the registration deadline</p>
+    </div>
+    <div class="about-box mb-4">
+      <h4>Workshops</h4>
+      <p>Workshop 1: Identifying Real-World SDG Problems</p>
+      <p>Workshop 2: Driving Sustainability Through Tech</p>
+      <p>Workshop 3: From Idea to Solution</p>
+
+
+  </div>
+</section>
 
 <!-- Timeline -->
-<section class="timeline-section">
-  <div class="timeline-title-main">Timeline</div>
+<section id="timeline" class="timeline-section">
+  <div class="timeline-title-main"><h1>Timeline</h1></div>
   <div class="timeline-container">
     <div class="timeline-center-line"></div>
     <!-- 1 -->
     <div class="timeline-row">
       <div class="timeline-col">
         <div class="timeline-card">
-          <div class="timeline-title">Submissions Open</div>
-          <div class="timeline-date">Date</div>
-          <div class="timeline-desc">Submission begins on Date</div>
+          <div class="timeline-title">Team Registrations Open</div>
+          <div class="timeline-date">20<sup>th</sup> of June</div>
         </div>
       </div>
       <div class="timeline-connector-wrap">
@@ -692,7 +822,7 @@
       </div>
       <div class="timeline-col right">
         <div class="timeline-card">
-          <div class="timeline-title">Event</div>
+          <div class="timeline-title">Team Registrations Close</div>
           <div class="timeline-date">Date</div>
           <div class="timeline-desc"></div>
         </div>
@@ -702,8 +832,8 @@
     <div class="timeline-row">
       <div class="timeline-col">
         <div class="timeline-card">
-          <div class="timeline-title"></div>
-          <div class="timeline-date"></div>
+          <div class="timeline-title">Proposals Submissions Open</div>
+          <div class="timeline-date">date</div>
           <div class="timeline-desc"></div>
         </div>
       </div>
@@ -722,9 +852,9 @@
       </div>
       <div class="timeline-col right">
         <div class="timeline-card">
-          <div class="timeline-title">Submission Close</div>
+          <div class="timeline-title">Workshop Series</div>
           <div class="timeline-date">Date</div>
-          <div class="timeline-desc">Don't delay, Registration ends on Date</div>
+          <div class="timeline-desc"></div>
         </div>
       </div>
     </div>
@@ -732,8 +862,8 @@
     <div class="timeline-row">
       <div class="timeline-col">
         <div class="timeline-card">
-          <div class="timeline-title"></div>
-          <div class="timeline-date"></div>
+          <div class="timeline-title">Submission Close</div>
+          <div class="timeline-date">date</div>
           <div class="timeline-desc"></div>
         </div>
       </div>
@@ -742,76 +872,6 @@
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-col right"></div>
-    </div>
-    <!-- 6 -->
-<!--    <div class="timeline-row">-->
-<!--      <div class="timeline-col"></div>-->
-<!--      <div class="timeline-connector-wrap">-->
-<!--        <div class="timeline-connector"></div>-->
-<!--        <div class="timeline-dot"></div>-->
-<!--      </div>-->
-<!--      <div class="timeline-col right">-->
-<!--        <div class="timeline-card highlight">-->
-<!--          <div class="timeline-title">Final Hackathon</div>-->
-<!--          <div class="timeline-date">October 13</div>-->
-<!--          <div class="timeline-desc">The ultimate showdown is on October 13th - Be there...</div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-  </div>
-</section>
-
-<!-- Endorsements -->
-<section class="py-5 grid-bg">
-  <div class="container">
-    <h2 class="section-title">Endorsements</h2>
-    <div class="row justify-content-center g-4">
-      <div class="col-md-5">
-        <div class="endorsement-box">
-          <div class="endorsement-title">Ms. lorem ipsum</div>
-          <div class="endorsement-divider"></div>
-          <p>
-            “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis harum!”
-          </p>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="endorsement-box">
-          <div class="endorsement-title">Kishan Deenul</div>
-          <div class="endorsement-divider"></div>
-          <p>
-            “minus odit possimus, tenetur ut veritatis vitae! Aliquam culpa eos, excepturi facere, fugiat illum laborum laudantium nobis nostrum recusandae ut!”
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sponsors -->
-<section class="py-5 grid-bg">
-  <div class="container">
-    <h2 class="section-title">Sponsors</h2>
-    <div class="row justify-content-center g-4">
-      <div class="col-md-4">
-        <div class="sponsor-card">
-          <div class="sponsor-icon">💎</div>
-          <div>Diamond Sponsor</div>
-          <span class="sponsor-badge">Knowledge partner</span>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="sponsor-card">
-          <div class="sponsor-icon">💎</div>
-          <div>Diamond Sponsor</div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="sponsor-card">
-          <div class="sponsor-icon">💎</div>
-          <div>Diamond Sponsor</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -823,53 +883,44 @@
       <h2 class="section-title">Registration</h2>
       <p>Registrations open soon. Stay tuned!</p>
       <div class="countdown" id="countdown-timer">00 : 00 : 00 : 00</div>
-      <a href="#" class="btn btn-lg btn-dark glow-btn animate__animated animate__pulse animate__infinite">Register Now</a>
+      <a href="https://forms.gle/boSbuA9tjYyphPxh6" class="btn btn-lg btn-dark glow-btn animate__animated animate__pulse animate__infinite">Register Now</a>
     </div>
   </div>
 </section>
 
+<!-- 5. Contact Section (HTML) -->
+<section id="contact" class="py-5 grid-bg">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form class="about-box">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning glow-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FAQ section-->
 <section class="faq-section py-5 grid-bg">
   <div class="container">
     <h2 class="section-title" style="text-align:center;font-weight:bold;color:#fff;margin-bottom:2.5rem;">
       Frequently Asked Questions
     </h2>
     <div class="faq-accordion">
-      <div class="faq-item open">
-        <button class="faq-question">
-          <span>What is INNOVA?</span>
-          <i class="bi bi-arrow-down-circle faq-chevron"></i>
-        </button>
-        <div class="faq-answer">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolor error eveniet fuga ipsam non quasi rem rerum sit tenetur. Ducimus eum iste minima omnis optio quis repellat saepe tempora?
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Who can participate?</span>
-          <i class="bi bi-arrow-down-circle faq-chevron"></i>
-        </button>
-        <div class="faq-answer">
-          Any student passionate about programming and problem-solving can participate!
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>What are the prizes for INNOVA?</span>
-          <i class="bi bi-arrow-down-circle faq-chevron"></i>
-        </button>
-        <div class="faq-answer">
-          certificates for participate!
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span></span>
-          <i class="bi bi-arrow-down-circle faq-chevron"></i>
-        </button>
-        <div class="faq-answer">
-          The event is held at Wayamba University Srilanka
-        </div>
-      </div>
       <div class="faq-item">
         <button class="faq-question">
           <span>How to join INNOVA?</span>
@@ -877,6 +928,16 @@
         </button>
         <div class="faq-answer">
           Register online using the registration link above!
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Who can participate?</span>
+          <i class="bi bi-arrow-down-circle faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          Any student passionate about programming and problem-solving can participate!
         </div>
       </div>
     </div>
@@ -888,11 +949,11 @@
 <footer class="footer">
   <div class="container">
     <div class="mb-2">
-      <img src="https://placehold.co/80x24/111/fff?text=WUSL" alt="WUSL" style="margin:0 10px;vertical-align:middle;">
-      <img src="https://placehold.co/80x24/111/fff?text=IEEE" alt="IEEE" style="margin:0 10px;vertical-align:middle;">
-      <img src="https://placehold.co/80x24/111/fff?text=IEEECS" alt="IEEECS" style="margin:0 10px;vertical-align:middle;">
+      <img src="assets/techX/wusl_logo.png" height="60" width="120" alt="WUSLCSLogo" style="margin:0 10px;vertical-align:middle;">
+      <img src="assets/techX/inova.png" height="40" width="120" alt="inova" style="margin:0 10px;vertical-align:middle;">
+      <img src="assets/techX/techXFooterLogo.png" height="60" width="120" alt="teachX" style="margin:0 10px;vertical-align:middle;">
     </div>
-    <p>Powered by WUSL IEEE, Computer Society</p>
+    <p>© 2025 IEEE Computer Society Wayamba University of Sri Lanka. All rights reserved.</p>
   </div>
 </footer>
 
