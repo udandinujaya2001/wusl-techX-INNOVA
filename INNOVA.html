@@ -26,25 +26,44 @@
     justify-content: center;
     align-items: center;
     }
-    .logo-wrapper-1{
-      width: 215px;
-      height: 40px;
+    .logo-wrapper-1 {
+      width: 140px;  /* adjust to match the side logos */
+      height: 50px;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
-    .logo-img-1{
+    .logo-img-1 {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;  /* use contain instead of cover */
     }
     .logo-img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
+
+    @media (max-width: 576px) {
+      .logo-wrapper,
+      .logo-wrapper-1 {
+        width: 90px;
+        height: 40px;
+      }
+
+      .logo-img,
+      .logo-img-1 {
+        object-fit: contain;
+      }
+
+      .navbar .container {
+        padding-left: 4px;
+        padding-right: 4px;
+        gap: 8px;
+      }
+    }
+
 
     /* Grid background for sections */
     .grid-bg {
@@ -125,11 +144,12 @@
     }
     @media (max-width: 768px) {
       .hero-logo-img-wrapper {
-        height: 4rem;
+        height: 20rem;
       }
       .hero-logo-img {
-        max-height: 3.8rem;
+        max-height: 18.5rem;
       }
+      
     }
 
 
@@ -168,6 +188,17 @@
     }
     .nav-bar a:hover {
       color: #ff77e9;
+    }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      padding: 14px 10px;
+      background: rgba(24, 24, 24, 0.95);
+      border-top: 1px solid #390132;
+      border-bottom: 1px solid #390132;
     }
 
     /* Awards */
@@ -231,6 +262,24 @@
       flex-direction: column;
       justify-content: center;
     }
+
+    @media (min-width: 768px) {
+      #about .about-box {
+        flex: 1;
+        max-width: 100%;
+        padding: 24px 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #about .about-box {
+        width: calc(100% - 48px) !important;
+        margin: 0 auto 20px auto !important;
+        padding: 18px 16px !important;
+      }
+    }
+
+
 
     /*program section*/
     .workshop-card-vertical {
@@ -638,6 +687,24 @@
       border-top: 1.5px solid 
       #390132;
     }
+
+    @media (max-width: 768px) {
+      .award-card {
+       min-width: 90vw;
+        margin-bottom: 20px;
+      }
+      .nav-bar a {
+        font-size: 0.95rem;
+      }
+      .form-control {
+       font-size: 0.95rem;
+      }
+      .about-box {
+       padding: 18px 12px;
+      }
+    }   
+
+
     /* Responsive tweaks */
     @media (max-width: 991px) {
       .timeline-card.left .timeline-box,
@@ -654,7 +721,10 @@
       }
     }
     @media (max-width: 767px) {
-      .hero-section, .registration-section {
+      .hero-section {
+        padding: 60px 0 40px 0;
+      }
+      .registration-section {
         padding: 60px 0 40px 0;
       }
       .about-box {
@@ -663,52 +733,111 @@
       .timeline-box {
         padding: 18px 12px;
       }
-      .endorsement-box {
-        padding: 18px 12px;
+      
+      
+    }
+    
+  
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .register-button {
+        font-size: 0.8rem !important;
+        padding: 10px 20px !important;
+        margin-top: 20px !important;
       }
-      .sponsor-card {
-        padding: 18px 4px;
+      body, p, li, .timeline-card, .workshop-desc, .faq-answer, .form-control {
+        font-size: 0.86rem !important;
+      }
+      .section-title {
+        font-size: 1.2rem !important;
+      }
+      .about-box, .timeline-card, .workshop-card-vertical {
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+      .champion-card {
+        order: -1;
+        width: calc(100% - 32px);
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+      }
+      .awards-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .award-card {
+        min-width: unset;
+        width: calc(100% - 48px);
+        margin: 12px 16px;
+      }
+      .timeline-card {
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        width: calc(100% - 32px);
       }
     }
-    /* Animate numbers */
-    @keyframes neonGlow {
-      0%, 100% { text-shadow: 0 0 8px #390132, 0 0 24px #fff;}
-      50% { text-shadow: 0 0 32px 
-        #390132, 0 0 8px #fff;}
-    }
-    .neon-text {
-      animation: neonGlow 2s infinite;
-    }
-  </style>
+
+</style>
+
+<style>
+/* Match widths of all about boxes on mobile */
+@media (max-width: 768px) {
+  #about .about-box {
+    width: 100% !important;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  /* Reorder awards */
+  .awards-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .champion-card {
+    order: -1 !important;
+    transform: scale(1.05) !important;
+    width: calc(100% - 32px);
+    margin: 12px 16px !important;
+  }
+  .award-card {
+    width: calc(100% - 32px);
+    margin: 12px 16px;
+    transform: none !important;
+  }
+
+  /* Reduce timeline box width and push away from line */
+  .timeline-card {
+    margin-left: 48px !important;
+    margin-right: 16px !important;
+  }
+
+  /* Match section title size to "What is INNOVA?" */
+  .section-title {
+    font-size: 1.7rem !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <div class="row align-items-center w-100">
-  
-        <!-- Left logo with link -->
-        <div class="col-4 text-start d-flex justify-content-start">
-          <a href="https://ieeecs.wyb.ac.lk/" class="logo-wrapper">
-            <img src="assets/techX/wusl_logo.png" alt="WUSL Logo" class="logo-img">
-          </a>
-        </div>
-  
-        <!-- Center logo with link -->
-        <div class="col-4 text-center d-flex justify-content-center">
-          <a href="#" class="logo-wrapper-1">
-            <img src="assets/techX/ieee%20syp.png" alt="IEEE SYP Logo" class="logo-img-1">
-          </a>
-        </div>
-  
-        <!-- Right logo with link -->
-        <div class="col-4 text-end d-flex justify-content-end">
-          <a href="#" class="logo-wrapper">
-            <img src="assets/techX/ieee.png" alt="IEEE Logo" class="logo-img">
-          </a>
-        </div>
-  
-      </div>
-    </div>
+  <div class="container d-flex justify-content-between align-items-center flex-nowrap">
+    <!-- Left logo -->
+    <a href="https://ieeecs.wyb.ac.lk/" class="logo-wrapper flex-fill text-start d-flex justify-content-start">
+      <img src="assets/techX/wusl_logo.png" alt="WUSL Logo" class="logo-img">
+    </a>
+
+    <!-- Center logo -->
+    <a href="#" class="logo-wrapper-1 flex-fill d-flex justify-content-center">
+      <img src="assets/techX/ieee%20syp.png" alt="IEEE SYP Logo" class="logo-img-1">
+    </a>
+
+    <!-- Right logo -->
+    <a href="#" class="logo-wrapper flex-fill text-end d-flex justify-content-end">
+      <img src="assets/techX/ieee.png" alt="IEEE Logo" class="logo-img">
+    </a>
+  </div>
 </nav>
 
 <!--Navigation bar-->
@@ -730,7 +859,7 @@
       <img src="assets/techX/INNOVA Logo.png" alt="INNOVA Logo" class="hero-logo-img animate__animated animate__fadeInDown">
     </div>
      <div class="d-flex justify-content-center gap-3 mt-4">
-      <a href="https://forms.gle/boSbuA9tjYyphPxh6" class="btn btn-warning btn-lg glow-btn animate__animated animate__pulse animate__infinite mt-4">Register</a>
+      <a href="https://forms.gle/boSbuA9tjYyphPxh6" class="btn btn-warning btn-lg glow-btn animate__animated animate__pulse animate__infinite mt-4 register-button">Register</a>
     </div>
   </div>
 </section>
@@ -774,27 +903,28 @@
 <!-- What is Innova -->
 <section id="about" class="py-5 grid-bg">
   <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-8 col-lg-6">
-        <div class="about-box text-center">
-          <h2 class="section-title">What is INNOVA?</h2>
-          <p>
-            INNOVA is a national-level innovation competition that brings together the brightest young minds to solve real-world problems with technology. It encourages creativity, teamwork, and hands-on skills.
-          </p>
-        </div>
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-5 mx-2 about-box mb-4">
+        <h3 class="section-title">What is INNOVA?</h3>
+        <p>
+          INNOVA is a technology-based idea hackathon organized by the IEEE Computer Society Student Branch Chapter of Wayamba University of Sri Lanka. It challenges university students to develop innovative solutions aligned with UN Sustainable Development Goals.
+        </p>
+      </div>
+      <div class="col-md-5 mx-2 about-box mb-4">
+        <h3 class="section-title">Who Organizes It?</h3>
+        <p>
+          The event is proudly organized by the IEEE Computer Society Student Branch of Wayamba University of Sri Lanka in collaboration with IEEE SYP.
+        </p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
+  </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
         <div class="about-box mb-4">
-          <h3 class="section-title">Who Organizes It?</h3>
-          <p>The event is proudly organized by the IEEE Computer Society Student Branch of Wayamba University of Sri Lanka in collaboration with IEEE SYP.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="about-box mb-4">
-          <h3 class="section-title">Why Participate?</h3>
-          <p>By participating, you gain practical experience, enhance your innovation skills, meet industry experts, and compete for amazing prizes and recognition.</p>
+          <h3 class="section-title">Why You Should Participate?</h3>
+          <p>Participating in INNOVA offers a unique opportunity for students to engage in meaningful, hands-on innovation. It allows you to go beyond the classroom and apply your knowledge to solve real-world problems that align with the United Nations Sustainable Development Goals. Through this platform, you can transform creative ideas into viable, scalable digital solutions that can make a lasting social impact.
+            Moreover, INNOVA helps you strengthen your portfolio with original project experience, giving you a competitive edge in academic and professional pursuits. It’s also a chance to gain well-deserved recognition through certificates, awards, and exposure from IEEE, a globally respected professional body. 
+          </p>
         </div>
       </div>
     </div>
@@ -943,18 +1073,18 @@
     <h2 class="section-title">Contact Us</h2>
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form class="about-box">
+        <form class="about-box" method="POST" action="YOUR_GOOGLE_SCRIPT_URL">
           <div class="mb-3">
             <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
           </div>
           <div class="mb-3">
             <label for="message" class="form-label">Your Message</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..."></textarea>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
           </div>
           <button type="submit" class="btn btn-warning glow-btn">Send Message</button>
         </form>
