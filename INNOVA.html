@@ -201,6 +201,12 @@
       border-bottom: 1px solid #390132;
     }
 
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+
     /* Awards */
     .awards-row {
       justify-content: center;
@@ -460,6 +466,11 @@
       color: #fff;
       opacity: 0.92;
     }
+    .timeline-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 24px 6px #ff77e9, 0 0 24px 6px #ff77e9;
+      z-index: 3;
+    }
 
     /* Connector line and dot */
     .timeline-connector-wrap {
@@ -672,6 +683,12 @@
     .faq-item.open .faq-chevron {
       transform: rotate(180deg);
     }
+
+    .faq-item:hover {
+      border-color: #ff77e9;
+      box-shadow: 0 0 24px 6px #ff77e9aa;
+    }
+
     @media (max-width: 600px) {
       .faq-question { font-size: 1.01rem; padding: 16px 12px; }
       .faq-answer { font-size: 0.97rem; padding: 0 12px 12px 12px; }
@@ -782,7 +799,6 @@
         width: calc(100% - 32px);
       }
     }
-
 </style>
 
 <style>
@@ -825,6 +841,7 @@
 }
 </style>
 
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark">
@@ -945,34 +962,8 @@
         <li>Teams must include at least one female member to promote gender diversity</li>
         <li>One team member must be assigned as the Team Leader, who will be responsible for all official communications and updates</li>
         <li>Participants are allowed to be part of only one team</li>
-        <li>Team changes are allowed only before the registration deadline</li>
       </ul>
     </div>
-    <div class="row justify-content-center g-4 mt-4">
-      <div class="col-md-4 d-flex justify-content-center">
-        <div class="workshop-card-vertical">
-          <div class="workshop-icon"><i class="bi bi-search"></i></div>
-          <h4 class="workshop-title">Workshop 1</h4>
-          <p class="workshop-desc">Identifying Real-World SDG Problems</p>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center">
-        <div class="workshop-card-vertical">
-          <div class="workshop-icon"><i class="bi bi-globe2"></i></div>
-            <h4 class="workshop-title">Workshop 2</h4>
-            <p class="workshop-desc">Driving Sustainability Through Tech</p>
-          </div>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center">
-        <div class="workshop-card-vertical">
-          <div class="workshop-icon"><i class="bi bi-lightbulb"></i></div>
-          <h4 class="workshop-title">Workshop 3</h4>
-          <p class="workshop-desc">From Idea to Solution</p>
-        </div>
-      </div>
-    </div>
-
-
   </div>
 </section>
 
@@ -984,7 +975,7 @@
     <!-- 1 -->
     <div class="timeline-row">
       <div class="timeline-col">
-        <div class="timeline-card">
+        <div class="timeline-card" data-aos="fade-up"">
           <div class="timeline-title">Team Registrations Open</div>
           <div class="timeline-date">20<sup>th</sup> of June</div>
         </div>
@@ -1003,7 +994,7 @@
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-col right">
-        <div class="timeline-card">
+        <div class="timeline-card" data-aos="fade-up"">
           <div class="timeline-title">Team Registrations Close</div>
           <div class="timeline-date">Date</div>
           <div class="timeline-desc"></div>
@@ -1013,9 +1004,9 @@
     <!-- 3 -->
     <div class="timeline-row">
       <div class="timeline-col">
-        <div class="timeline-card">
+        <div class="timeline-card" data-aos="fade-up"">
           <div class="timeline-title">Proposals Submissions Open</div>
-          <div class="timeline-date">date</div>
+          <div class="timeline-date">27<sup>th</sup> of June</div>
           <div class="timeline-desc"></div>
         </div>
       </div>
@@ -1033,7 +1024,7 @@
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-col right">
-        <div class="timeline-card">
+        <div class="timeline-card" data-aos="fade-up"">
           <div class="timeline-title">Workshop Series</div>
           <div class="timeline-date">Date</div>
           <div class="timeline-desc"></div>
@@ -1043,9 +1034,9 @@
     <!-- 5 -->
     <div class="timeline-row">
       <div class="timeline-col">
-        <div class="timeline-card">
+        <div class="timeline-card" data-aos="fade-up"">
           <div class="timeline-title">Submission Close</div>
-          <div class="timeline-date">date</div>
+          <div class="timeline-date">13<sup>th</sup> of July at 11.59 PM</div>
           <div class="timeline-desc"></div>
         </div>
       </div>
@@ -1180,6 +1171,8 @@
     });
   });
 </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once: false });</script>
 </body>
 </html>
 
