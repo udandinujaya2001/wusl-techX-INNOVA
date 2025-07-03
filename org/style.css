@@ -277,27 +277,58 @@
 
 
     /*program section*/
+    .workshop-card-vertical {
+     background: linear-gradient(120deg, #181818 80%, #39013233 100%);
+     border: 2px solid #ff00ccaa;
+     border-radius: 16px;
+      box-shadow: 0 0 18px 2px #39013233;
+      padding: 36px 18px 28px 18px;
+      text-align: center;
+      color: #fff;
+      transition: box-shadow 0.25s, transform 0.18s;
+      position: relative;
+      overflow: hidden;
+      width: 270px;    
+      min-height: 250px; 
+      display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+    }
+    .workshop-card-vertical:hover, .workshop-card-vertical.highlight {
+      box-shadow: 0 0 32px 8px #ff77e9cc, 0 0 48px 12px #390132cc;
+     border-color: #ff77e9;
+     transform: translateY(-8px) scale(1.03);
+    }
+    .workshop-card-vertical h4{
+      font-size: x-large;
+    }
+    .workshop-card-vertical p{
+      font-size: medium;
+    }
+    .workshop-icon {
+      font-size: 2.2rem;
+     color: #ff77e9;
+     margin-bottom: 1.1rem;
+     filter: drop-shadow(0 0 8px #ff77e9aa);
+    }
+    .workshop-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.7rem;
+      letter-spacing: 1px;
+    }
+    .workshop-desc {
+     font-size: 0.98rem;
+     color: #fff;
+     opacity: 0.93;
+    }
     @media (max-width: 991px) {
       .workshop-card-vertical {
         width: 95vw;
         min-height: 220px;
        padding: 18px 8px 14px 8px;
       }
-    }
-    .join-whatsapp {
-      background-color: yellow;
-      color: black;
-      font-weight: bold;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .join-whatsapp:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 14px #fff200;
     }
     
     /* Timeline */
@@ -658,16 +689,6 @@
 
     }
 
-    .contact-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ff00ccaa;
-      box-shadow: 0 0 18px 2px #390132aa;
-      margin-bottom: 1rem;
-    }
-
     /* Footer */
     .footer {
       background: #000;
@@ -806,7 +827,3 @@
     font-size: 1.7rem !important;
   }
 }
-
-
-
-
