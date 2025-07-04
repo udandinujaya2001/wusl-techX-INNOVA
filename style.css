@@ -143,15 +143,6 @@
 
 
     /* Navigation bar*/
-    .nav-bar {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      padding: 14px 0;
-      background: rgba(24, 24, 24, 0.95);
-      border-top: 1px solid #390132;
-      border-bottom: 1px solid #390132;
-    }
     .nav-bar a {
       color: #fff;
       text-decoration: none;
