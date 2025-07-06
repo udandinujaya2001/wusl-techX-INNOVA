@@ -779,3 +779,27 @@ body, p, li, .timeline-card, .workshop-desc, .faq-answer, .form-control {
   font-size: 1.7rem !important;
 }
 }
+
+/* Softened Grid Lines */
+.grid-bg {
+  background-color: #080404;
+  background-image:
+    linear-gradient(rgba(255, 255, 0, 0.015) 1px, transparent 0.1px),
+    linear-gradient(90deg, rgba(255, 255, 0, 0.015) 1px, transparent 0.1px);
+  background-size: 40px 40px;
+}
+
+.faq-section.grid-bg {
+  background-color: #080404;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 0.1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 0.1px);
+  background-size: 40px 40px;
+}
+
+.timeline-section {
+  background-color: #080404;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 0.1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 0.1px, transparent 40px);
+}
