@@ -168,7 +168,7 @@ body {
 }
 .nav-bar {
   position: sticky;
-  top: 16px;
+  top: 0px;
   z-index: 9999;
 }
 /* Awards */
