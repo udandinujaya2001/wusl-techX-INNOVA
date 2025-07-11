@@ -16,21 +16,13 @@
   <link href="style.css" rel="stylesheet"/>
  </head>
  <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-   <div class="container d-flex justify-content-between align-items-center flex-nowrap">
-    <!-- Left logo -->
-    <a class="logo-wrapper flex-fill text-start d-flex justify-content-start" href="https://ieeecs.wyb.ac.lk/">
-     <img alt="WUSL Logo" class="logo-img" src="assets/techX/wusl_logo.png"/>
-    </a>
-    <!-- Center logo -->
-    <a class="logo-wrapper-1 flex-fill d-flex justify-content-center" href="#">
-     <img alt="IEEE SYP Logo" class="logo-img-1" src="assets/techX/ieee%20syp.png"/>
-    </a>
-    <!-- Right logo -->
-    <a class="logo-wrapper flex-fill text-end d-flex justify-content-end" href="#">
-     <img alt="IEEE Logo" class="logo-img" src="assets/techX/ieee.png"/>
-    </a>
-   </div>
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container d-flex justify-content-center align-items-center">
+      <!-- Centered Logo (formerly left logo) -->
+      <a class="center-logo" href="https://ieeecs.wyb.ac.lk/">
+        <img alt="INNOVA Center Logo" class="center-logo-img" src="assets/techX/wusl_logo.png" />
+      </a>
+    </div>
   </nav>
   <!--Navigation bar-->
   <div class="nav-bar">
@@ -333,7 +325,7 @@
       Registration
      </h2>
      <p>
-      Team Registrations close soon. Hurry Up!
+      Team Registrations Closed
      </p>
      <div class="countdown" id="countdown-timer">
       00 : 00 : 00 : 00
@@ -478,6 +470,28 @@
     </div>
    </div>
   </section>
+  <!--Partners-->
+  <section class="partners-section">
+    <div class="container text-center">
+      <h2 class="section-title">Our Partners</h2>
+      <div class="row justify-content-center align-items-center partners-logos">
+        <div class="col-6 col-md-4 mb-4">
+          <a href="https://ieeecs.wyb.ac.lk/">
+            <img src="assets/techX/wusl_logo.png" alt="Partner 1" class="partner-logo" />
+          </a>
+        </div>
+        <div class="col-6 col-md-4 mb-4">
+          <img src="assets/techX/ieee%20syp.png" alt="Partner 2" class="partner-logo" />
+        </div>
+        <div class="col-6 col-md-4 mb-4">
+          <a href="https://www.ieee.org/">
+            <img src="assets/techX/ieee.png" alt="Partner 3" class="partner-logo" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
    <div class="container">
@@ -542,5 +556,6 @@
   <script>
    AOS.init({ once: false });
   </script>
+  <script src="animations.js"></script>
  </body>
 </html>
